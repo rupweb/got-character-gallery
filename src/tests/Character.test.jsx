@@ -1,4 +1,6 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
+// import { describe, it } from '@jest/globals';
 import Character from '../components/Character';
 import checkPropTypes from 'check-prop-types';
 
@@ -35,7 +37,7 @@ describe('<Character/> component', () => {
     it('renders an img tag with a role of presentation and the correct name', () => {
         render(<Character { ...characterProps } />);
 
-        const characterImg = screen.getByRole('presentation', { name: characterProps.fullName });
+        const characterImg = screen.getByRole('img', { name: characterProps.fullName });
         expect(characterImg).toBeDefined();
     });
 
